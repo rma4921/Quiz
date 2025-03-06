@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>방향키로 박스 옮기기</title>
+  <style>
+    #box{
+      width : 50px;
+      height : 50px;
+      background-color: skyblue;
+      position : absolute;
+      left : 0;
+      top : 0;
+    }
+    body {
+      //overflow : hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+
+  <script>
+    const box = document.getElementById("box");
+    let x = 0;
+    let y = 0;
+    const distance = 10;
+    document.addEventListener("keydown", function(event){
+      switch(event.key){
+        case "ArrowLeft":
+          if(x > 0)
+            x -= distance;
+          break;
+        case "ArrowRight":
+          if(x < window.innerWidth - 50)
+            x += distance;
+          break;
+        case "ArrowUp":
+          if(y > 0)
+            y -= distance;
+          break;
+        case "ArrowDown":
+          if(y < window.innerHeight - 53)
+            y += distance;
+          break;
+      }
+      box.style.left = x + "px";
+      box.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
