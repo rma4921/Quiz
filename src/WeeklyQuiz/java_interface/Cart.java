@@ -1,36 +1,25 @@
 package WeeklyQuiz.java_interface;
 
-public class Cart {
+import java.math.BigDecimal;
+
+class Cart {
     private Product[] products;
+    private GetDeliveryCharge calculator;
 
     public Cart(Product[] products) {
         this.products = products;
+        this.calculator = new GetDeliveryCharge();
     }
 
-    public int calculateDeliveryCharge() {
+    public BigDecimal calculateDeliveryCharge() {
         int totalWeight = 0;
-        int totalPrice = 0;
+        BigDecimal totalPrice = BigDecimal.ZERO;
 
         for (Product product : products) {
             totalWeight += product.getWeight();
-            totalPrice += product.getDiscountedPrice();
+            totalPrice = totalPrice.add(product.getDiscountedPrice());
         }
 
-        int deliveryCharge;
-        if (totalWeight < 3) {
-            deliveryCharge = 1000;
-        } else if (totalWeight < 10) {
-            deliveryCharge = 5000;
-        } else {
-            deliveryCharge = 10000;
-        }
-
-        if (totalPrice <= 30000) {
-            return deliveryCharge;
-        } else if (totalPrice < 100000) {
-            return deliveryCharge - 1000;
-        } else {
-            return 0;
-        }
+        return calculator.getDeliveryCharge(totalWeight, totalPrice);
     }
 }
