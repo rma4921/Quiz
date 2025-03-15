@@ -1,5 +1,7 @@
 package WeeklyQuiz.java_interface;
 
+import java.math.BigDecimal;
+
 public interface Promotion {
-    int getDiscountAmount();
+    BigDecimal getDiscountAmount();
 }
