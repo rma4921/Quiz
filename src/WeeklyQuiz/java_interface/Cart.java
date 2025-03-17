@@ -12,7 +12,7 @@ class Cart {
     }
 
     public BigDecimal calculateDeliveryCharge() {
-        int totalWeight = 0;
+        double totalWeight = 0.0;
         BigDecimal totalPrice = BigDecimal.ZERO;
 
         for (Product product : products) {

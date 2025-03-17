@@ -6,11 +6,11 @@ public class Grocery extends Product {
     // 명세에 따라 따로 구현. 추후 Product에 합쳐보기
     private BigDecimal discount;
 
-    public Grocery(String name, BigDecimal price, int weight) {
+    public Grocery(String name, BigDecimal price, double weight) {
         super(name, price, weight);
         this.discount = new BigDecimal(2000);
     }
-    public Grocery(String name, BigDecimal price, int weight, BigDecimal discount) {
+    public Grocery(String name, BigDecimal price, double weight, BigDecimal discount) {
         super(name, price, weight);
         this.discount = discount;
     }

@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 class GetDeliveryCharge implements DeliveryChargeCalculator {
     @Override
-    public BigDecimal getDeliveryCharge(int weight, BigDecimal price) {
+    public BigDecimal getDeliveryCharge(double weight, BigDecimal price) {
         BigDecimal deliveryCharge;
 
         if (weight < 3) {
