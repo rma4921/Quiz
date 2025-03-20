@@ -9,6 +9,8 @@ import java.util.stream.IntStream;
 /*
  * 스트림과 컬렉션을 사용하여 코드를 작성해주세요.
  * 문제는 스트림으로 해결한 버전과 스트림으로 해결하지 않은 버전 모두 작성해주세요.
+ *
+ * 오름차순으로 정렬이 된 두 배열이 주어지면 두 배열을 오름차순으로 합쳐 출력하는 프로그램을 작성해보세요.
  * */
 public class AscendingSort {
     public int[] solution(int[] array1, int[] array2) {
