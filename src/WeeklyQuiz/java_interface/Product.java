@@ -13,6 +13,7 @@ public abstract class Product implements Promotion{
         this.weight = weight;
     }
 
+    // 굳이 사용하지 않아도 됨. abstract 클래스이기에 인터페이스의 요소를 자식이 구현하면됨.
     public abstract BigDecimal getDiscountAmount();
 
     public BigDecimal getDiscountedPrice() {
